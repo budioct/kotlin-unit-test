@@ -1,0 +1,21 @@
+UI test / End to End akan fokus test semua interasksi dalam aplikasi
+Service test / Integrastion Test fokus hanya integrasi antart aplikasi ke data base dan system lain
+Unit Test hanya fokus ke modul-modul layer (class/method) appliksi terkecil yang kita buat
+
+// di file build.gradle.kts kita mesti set
+
+// merubah default Junit Test
+tasks.named<Test>("test") {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
+
+// supaya di compile oleh jvm yang kita gunakan
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
+    kotlinOptions {
+        jvmTarget = "21"
+    }
+}
+
+// task command unit test di kotlin (windows)
+./gradlew test --info
