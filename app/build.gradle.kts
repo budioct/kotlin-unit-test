@@ -56,4 +56,17 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
     }
 }
 
+// unit test gradle
+tasks.named<Test>("test") {
+    useJUnitPlatform {
+        excludeTags("integration-test")
+    }
+}
+
+// menjalankan integration test
+tasks.register("integration-test", Test::class) {
+    useJUnitPlatform {
+        includeTags("integration-test")
+    }
+}
 
