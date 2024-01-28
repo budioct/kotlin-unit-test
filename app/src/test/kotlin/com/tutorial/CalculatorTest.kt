@@ -1,12 +1,7 @@
 package com.tutorial
 
 import com.tutorial.generator.SimpleDisplayNameGenerator
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Disabled
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.DisplayNameGeneration
-import org.junit.jupiter.api.assertThrows
+import org.junit.jupiter.api.*
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
@@ -76,6 +71,17 @@ class CalculatorTest {
         println("Comming Soon")
 
     }
+
+    @Test
+    fun testAssumption(){
+
+        Assumptions.assumeTrue("DEV" == System.getenv().get("PROFILE"))// implement Assumptions unit test
+
+        println("Benar ENV PROFILE ADALAH DEV")
+
+    }
+
+
 
 
 }
