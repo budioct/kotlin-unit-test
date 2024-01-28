@@ -3,6 +3,7 @@ package com.tutorial
 import com.tutorial.generator.SimpleDisplayNameGenerator
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.DisplayNameGeneration
 import org.junit.jupiter.api.assertThrows
@@ -65,6 +66,14 @@ class CalculatorTest {
         assertThrows<IllegalArgumentException> {
             calculator.divide(100, 0)
         }
+
+    }
+
+    @Test
+    @Disabled // non-aktifkan unit test
+    fun testCommingSoon(){
+
+        println("Comming Soon")
 
     }
 
