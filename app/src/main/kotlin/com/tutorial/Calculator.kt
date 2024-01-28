@@ -6,13 +6,15 @@ class Calculator {
         return first + second
     }
 
-    fun devide(first: Int, second: Int): Int {
+    fun divide(first: Int, second: Int): Int {
         if (second == 0) {
             throw IllegalArgumentException("Cat not divide by zero")
         } else {
             return first / second
         }
     }
+
+
 
 
 }

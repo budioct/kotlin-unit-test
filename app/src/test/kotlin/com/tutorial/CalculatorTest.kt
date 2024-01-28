@@ -1,16 +1,22 @@
 package com.tutorial
 
+import com.tutorial.generator.SimpleDisplayNameGenerator
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.DisplayNameGeneration
 import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
+//@DisplayName("Test Calculator Test") // native junit 5 // ubah nama unit test
+@DisplayNameGeneration(SimpleDisplayNameGenerator::class) // generate junit 5 // implement ubah nama unit test
 class CalculatorTest {
 
     val calculator = Calculator()
 
     @Test
+    @DisplayName("test function Calculator.add(Int, Int)") // merubah nama unit test
     fun testAddSucces() {
 
         val result = calculator.add(10, 10)
@@ -36,9 +42,10 @@ class CalculatorTest {
     }
 
     @Test
+    @DisplayName("test function Calculator.divide(Int, Int)") // merubah nama unit test
     fun testDeviceSuccess(){
 
-        val result = calculator.devide(10, 2)
+        val result = calculator.divide(10, 2)
         Assertions.assertEquals(5, result)
 
     }
@@ -46,7 +53,7 @@ class CalculatorTest {
     @Test
     fun testDivideFailed(){
 
-        val result = calculator.devide(10, 2)
+        val result = calculator.divide(10, 2)
         Assertions.assertNotEquals(2, result)
 
     }
@@ -56,7 +63,7 @@ class CalculatorTest {
 
         // test cek harus Error assertThrows<T>... // ekpetasi harus error
         assertThrows<IllegalArgumentException> {
-            calculator.devide(100, 0)
+            calculator.divide(100, 0)
         }
 
     }
